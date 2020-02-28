@@ -1,0 +1,26 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Form.js",
+    "scripts": {
+        "start": "node lib/Form.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack"
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bw-post-here-1/backend.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bw-post-here-1/backend/issues"
+    },
+    "homepage": "https://github.com/bw-post-here-1/backend#readme",
+    "devDependencies": {
+        "webpack-dev-server": "^3.10.3"
+    }
+}

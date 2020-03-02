@@ -1,8 +1,8 @@
 /* jshint ignore:start */
 export default [{
     id: 1,
-    title: "My Search Log",
-    body: "Log"
+    title: "Welcome Reddit User",
+    body: " Text Will save and appear here with SubReddit suggestions below"
 }];
 
 

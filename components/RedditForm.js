@@ -36,7 +36,7 @@ const RedditForm = props => {
         <input type = "text"
         placeholder = {`Enter ${Date.now()}`}
         id = "title"
-        name = "title"
+        name = ""
         value = {note.title}
         onChange = {handleChanges}
         /> 
@@ -44,21 +44,15 @@ const RedditForm = props => {
          <label htmlFor = "note" > Post Title </label> 
          <textarea id = "note"
         name = "body"
-        placeholder = "Content Here"
-        value = {
-            note.body
-        }
-        onChange = {
-            handleChanges
-        }
+        placeholder = ""
+        value = {note.body}
+        onChange = {handleChanges}
         />
 
        <button type = "submit" > Search </button>
            
        
-           document.addEventListener('DomContentLoader', () => (
-           document.getElementById('btn').addEventListener('click', addNewNote)
-           ));
+        
         </form>
     );
 };

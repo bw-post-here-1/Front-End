@@ -11,8 +11,8 @@ function App() {
     const [notes, setNotes] = useState([{
         
         id: 1,
-        title: "Welcome Redditer",
-        body: " Text Will save and appear here"
+        title: "Welcome Reddit User",
+        body: " Text Will save and appear here with SubReddit suggestions below"
     }]);
 
     

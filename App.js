@@ -25,23 +25,22 @@ function App() {
 
         setNotes([...notes, newNote]);
     };
-    return ( <div className = "App" >
-        <h1> Reddit Post  </h1> {
-           } 
-            <NoteForm addNewNote = {
-            addNewNote
-        }
-        /> <
-        Notes notes = {
-            notes
-        }
-        />  </div>
+    return ( 
+    <div className = "App" >
+        <Route exact path="/" component={Login} />
+        <h1> Reddit Post  </h1> 
+
+        <NoteForm addNewNote = {
+        addNewNote}
+        /> 
+        <Notes 
+        notes = {notes}
+        />  
+    </div>
     );
 }
 
 
-
-const rootElement = document.getElementById("root");
-ReactDOM.render( < App / > , rootElement);
+export default App;
 
 

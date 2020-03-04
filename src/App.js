@@ -17,7 +17,6 @@ function App() {
         <div className = "App" >
 
             <Route exact path="/" component={Login} />
-            <h1> Reddit Post  </h1> 
 
         </div>
     </Router>

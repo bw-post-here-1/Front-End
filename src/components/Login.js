@@ -24,7 +24,7 @@ class Login extends React.Component{
           .post("/login", this.state.credentials)
           .then(res => {
             localStorage.setItem("token", res.data.payload);
-            this.props.history.push("/protected");
+            this.props.history.push("/homepage");
           })
           .catch(err => {
             localStorage.removeItem("token");
@@ -50,7 +50,7 @@ class Login extends React.Component{
                     value={this.state.credentials.password}
                     onChange={this.handleChange}
                     />
-                    <button>Log in</button>
+                    <button>Log In</button>
                 </form>
                 </div>
             </>

@@ -30,9 +30,9 @@ const RedditForm = props => {
         }); 
     };
     
-    return (<form onSubmit = {
-            submitForm
-        } > {} <label htmlFor = "title" > Title </label> {} 
+    return (<form onSubmit = {submitForm} > 
+          {} 
+        <label htmlFor = "title" > Title </label> {} 
         <input type = "text"
         placeholder = {`Enter ${Date.now()}`}
         id = "title"
@@ -41,8 +41,8 @@ const RedditForm = props => {
         onChange = {handleChanges}
         /> 
 
-         <label htmlFor = "note" > Post Title </label> 
-         <textarea id = "note"
+        <label htmlFor = "note" > Post Title </label> 
+        <textarea id = "note"
         name = "body"
         placeholder = ""
         value = {note.body}

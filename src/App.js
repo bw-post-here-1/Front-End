@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
 import ReactDOM from "react-dom";
-// import Notes from "./components/Notes";
-// import NoteForm from "./components/NoteForm";
-// import data from "./data";
-
+import UpdateRedit from "./components/UpdateRedit";
+import PostRedit from "./components/PostRedit";
 import PostContext from "./contexts/PostContext";
+import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "../src/Styles.scss";
@@ -16,12 +15,13 @@ function App() {
     return ( 
     <Router>
         <div className = "App" >
-            <nav>
-                {/* <NavLink t>Home</NavLink> */}
-            </nav>
 
             <Route exact path="/" component={Login} />
-            <Route exact path="/new-user" component={CreateAccount} />
+            <Route exact path="/createaccount" component={CreateAccount} />
+            <ProtectedRoute path = "/homepage" component={HomePage} />
+
+            <ProtectedRoute path = "/updatereddit" component = { UpdateRedit } />
+            <ProtectedRoute path = "/PostRedit" component = { PostRedit } />
 
         </div>
     </Router>

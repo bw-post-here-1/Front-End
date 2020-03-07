@@ -1,12 +1,14 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export const axiosWithAuth = () => {
-//   const token = localStorage.getItem("token");
+const axiosWithAuth = () => {
+  const token = localStorage.getItem("token");
 
-//   return axios.create({
-//     headers: {
-//       Authorization: token
-//     },
-//     baseURL: ""
-//   });
-// };
+  return axios.create({
+    headers: {
+      Authorization: token
+    },
+    baseURL: "https://post-here-subreddit-predictor.herokuapp.com/api"
+  });
+};
+
+export default axiosWithAuth;

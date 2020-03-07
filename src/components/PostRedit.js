@@ -6,7 +6,7 @@ const PostRedit = props => {
   const [ redit, setRedit] = useState({
     id: Date.now(),
     title: "", 
-    body: "" 
+    post: "" 
   });
 
   
@@ -22,8 +22,8 @@ const PostRedit = props => {
       axios
         .post(" api ", redit)
         .then(res => {
-          setRedit(redit);
-          props.history.push("/");
+          setRedit(res.data);
+          props.history.push("/homepage");
         })
         .catch(err => {
           console.log("Error: ", err);
@@ -50,9 +50,9 @@ const PostRedit = props => {
         <label htmlFor = "info" > Post Title </label>   
         <textarea 
         id = "info"
-        name = "body"
+        name = "post"
         placeholder = ""
-        value = {redit.body}
+        value = {redit.post}
         onChange = {handleChange}
         />
           

@@ -6,7 +6,7 @@ const UpdateRedit = props => {
   const [ update, setUpdate ] = useState({
     id: "",
     title: "",
-    body: "",
+    post: "",
   });
 
   const { id } = useParams();
@@ -22,7 +22,7 @@ const UpdateRedit = props => {
       axios
         .put(` api /${id}`, update)
         .then(res => {
-          props.history.push("/");
+          props.history.push("/homepage");
         })
         .catch(err => {
           console.log("Error: ", err);
@@ -61,15 +61,15 @@ const UpdateRedit = props => {
             <label htmlFor = "info" > Post Title </label>   
             <textarea 
                id = "info"
-               name = "body"
+               name = "post"
                placeholder = ""
-               value = {redit.body}
+               value = {update.post}
                onChange = {handleChange}
              />
         </p>
      
         <button type="submit">
-          UpdateRedit
+          Update Reddit
         </button>
       </form>
     </div>

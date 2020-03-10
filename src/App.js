@@ -1,34 +1,58 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom"
-import ReactDOM from "react-dom";
-import UpdateRedit from "./components/UpdateRedit";
-import PostRedit from "./components/PostRedit";
-import PostContext from "./contexts/PostContext";
-import HomePage from "./components/HomePage";
+import React, { Component } from "react";
+import PostForm from "./components/PostForm";
+import Home from "./components/Home";
 import Login from "./components/Login";
+import SinglePost from "./components/SinglePost";
+import UpdateRedit from "./components/UpdateRedit";
+import { Route, Link, Switch } from "react-router-dom";
+import ReactDOM from "react-dom";
+import PostContext from "./contexts/PostContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import "../src/Styles.scss";
 import CreateAccount from "./components/CreateAccount";
+import "../src/Styles.scss";
 
-function App() {
-    
-    return ( 
-    <Router>
-        <div className = "App" >
 
-            <Route exact path="/" component={Login} />
-            <Route exact path="/createaccount" component={CreateAccount} />
-            <ProtectedRoute path = "/homepage" component={HomePage} />
-
-            <ProtectedRoute path = "/updatereddit" component = { UpdateRedit } />
-            <ProtectedRoute path = "/PostRedit" component = { PostRedit } />
-
+class App extends Component {
+    render() {
+      return (
+        <div className="App">
+          <nav>
+            <Link to="/login"> Login </Link> <hr />
+            <Link to="/">Home</Link> <hr />
+            <Link to="/postform">PostForm</Link>
+          </nav>
+  
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+  
+            <Route
+              exact
+              path="/postform"
+              render={props => {
+                return <PostForm {...props} />;
+              }}
+            />
+  
+            <Route
+              path="/postform/:id"
+              render={props => {
+                return <SinglePost {...props} />;
+              }}
+            />
+  
+            <Route
+              path="/updateredit/:id"
+              render={props => {
+                return <UpdateRedit {...props} />;
+              }}
+            />
+          </Switch>
         </div>
-    </Router>
-    );
-}
-
-
-export default App;
+      );
+    }
+  }
+  
+  export default App;
 
 

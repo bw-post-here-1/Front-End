@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import PostList from "./PostList";
 
-class UpdateRedit extends Component {
+class PostForm extends Component {
   constructor(props) {
     super(props);
 
@@ -20,7 +21,7 @@ class UpdateRedit extends Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .put("https://jsonplaceholder.typicode.com/posts", this.state)
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
       .then(response => {
         console.log(response);
       })
@@ -33,7 +34,7 @@ class UpdateRedit extends Component {
     const { userId, title, body } = this.state;
     return (
       <div className="quotes-form">
-        <h2> Update-REDIT </h2>
+        <h2> SUB-REDIT </h2>
         <form onSubmit={this.submitHandler}>
           <div>
             <input
@@ -63,13 +64,16 @@ class UpdateRedit extends Component {
             />
           </div>
           <button className="quotes-btn" type="submit">
-            Update-Redit
+            Submit
           </button>
         </form>
         <br />
+        <br />
+        <br />
+        <PostList />
       </div>
     );
   }
 }
 
-export default UpdateRedit;
+export default PostForm;

@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from "./HomePage";
+import Home from "./Home";
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 class Login extends React.Component{
@@ -25,7 +25,7 @@ class Login extends React.Component{
           .post("/auth/login", this.state.credentials)
           .then(res => {
             localStorage.setItem("token", res.data);
-            this.props.history.push("/homepage");
+            this.props.history.push("/home");
           })
           .catch(err => {
             localStorage.removeItem("token");

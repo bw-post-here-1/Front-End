@@ -6,7 +6,6 @@ import SinglePost from "./components/SinglePost";
 import UpdateRedit from "./components/UpdateRedit";
 import { Route, Link, Switch } from "react-router-dom";
 import ReactDOM from "react-dom";
-import PostContext from "./contexts/PostContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CreateAccount from "./components/CreateAccount";
 import "../src/Styles.scss";
@@ -23,7 +22,7 @@ class App extends Component {
           </nav>
   
           <Switch>
-            <Route exact path="/" component={Home} />
+            <ProtectedRoute exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
   
             <Route
